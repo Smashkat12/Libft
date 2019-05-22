@@ -6,7 +6,7 @@
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:06:43 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/05/21 14:13:08 by kmorulan         ###   ########.fr       */
+/*   Updated: 2019/05/22 15:27:22 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+#include <fcntl.h>
 
 # define BUFF_SIZE 100
 # define MALLCHECK(x) if (!x) return (-1);
