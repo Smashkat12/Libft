@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 17:58:23 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/05/23 13:09:04 by kmorulan         ###   ########.fr       */
+/*   Created: 2019/05/23 11:57:12 by kmorulan          #+#    #+#             */
+/*   Updated: 2019/05/23 13:00:11 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+void	ft_putendl_fd(char const *s, int fd)
 {
 	int i;
 
 	i = 0;
 	while (s[i])
 	{
-		ft_putchar(s[i]);
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	write (1, "\n", 1);
+	write (fd, "\n", 1);
 }

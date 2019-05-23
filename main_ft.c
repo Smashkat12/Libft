@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   main_ft.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 17:58:23 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/05/23 13:09:04 by kmorulan         ###   ########.fr       */
+/*   Created: 2019/05/23 12:37:47 by kmorulan          #+#    #+#             */
+/*   Updated: 2019/05/23 12:46:33 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+int		main()
 {
-	int i;
+	int fd;
+	char const *c;
 
-	i = 0;
-	while (s[i])
+	c = "this is world we live in";
+	fd = open("text.txt", O_CREAT | O_RDWR, 0700);
+
+	if(fd == -1)
 	{
-		ft_putchar(s[i]);
-		i++;
+		exit (1);
 	}
-	write (1, "\n", 1);
+	ft_putendl_fd(c, fd);
+	return (0);
 }
