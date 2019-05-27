@@ -15,7 +15,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
-#include <fcntl.h>
+#include <fcntl.h> /* remember to delete this, used to test fd functions */
 
 # define BUFF_SIZE 100
 # define MALLCHECK(x) if (!x) return (-1);
@@ -60,7 +60,7 @@ void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 
 size_t				ft_strlen(const char *s);
-char				*ft_strdup(const char *s1);
+char				*ft_strdup(const char *src);
 char				*ft_strndup(const char *s1, size_t n);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
