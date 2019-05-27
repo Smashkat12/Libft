@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -13,19 +13,9 @@
 
 #include "libft.h"
 
-int		ft_strlen(const char *s)
-{
-	int i;
-=======
-
-
-
-#include "libft.h"
-
 size_t		ft_strlen(const char *s)
 {
 	size_t i;
->>>>>>> 5b7485e6073695e9c3b2649190031ffdb1204c35
 
 	i = 0;
 	while (s[i])
