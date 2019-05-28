@@ -6,20 +6,20 @@
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 12:01:15 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/05/27 12:05:39 by kmorulan         ###   ########.fr       */
+/*   Updated: 2019/05/28 14:42:04 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 size_t		ft_strlen(const char *s)
 {
 	size_t i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		i++;
 	}
-	return(i)
+	return (i);
 }

@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/28 15:02:36 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/05/28 15:03:14 by kmorulan         ###   ########.fr       */
+/*   Created: 2019/05/27 12:56:02 by kmorulan          #+#    #+#             */
+/*   Updated: 2019/05/28 14:57:23 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+char	*ft_strndup(const char *src, size_t n)
 {
-	if (ft_isupper(c))
-	{
-		int res;
+	char *res;
+	size_t i;
 
-		res = c + 32;
-		return (res);
-	}
-	else
+	i = 0;
+	res = (char *)malloc((sizeof(char)) * (ft_strlen(src) + 1));
+
+	if (!(res))
 	{
-		return (c);
+		return (NULL);
 	}
+	while (i < n)
+	{
+		res[i] = src[i];
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
 }

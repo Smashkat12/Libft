@@ -6,7 +6,7 @@
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 11:57:12 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/05/23 13:00:11 by kmorulan         ###   ########.fr       */
+/*   Updated: 2019/05/28 14:48:18 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	ft_putendl_fd(char const *s, int fd)
 		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	write (fd, "\n", 1);
+	write(fd, "\n", 1);
 }

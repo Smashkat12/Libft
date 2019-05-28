@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/28 15:02:36 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/05/28 15:03:14 by kmorulan         ###   ########.fr       */
+/*   Created: 2019/05/27 13:47:12 by kmorulan          #+#    #+#             */
+/*   Updated: 2019/05/28 14:52:34 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	if (ft_isupper(c))
-	{
-		int res;
+	int i;
+	int j;
 
-		res = c + 32;
-		return (res);
-	}
-	else
+	i = 0;
+	j = 0;
+	while (s1[i])
 	{
-		return (c);
+		i++;
 	}
-}
+	while (s2[j])
+	{
+		s1[i] = s2[j];
+		i++;
+		j++;
+	}
+	s1[i] = '\0';
+	return (s1);
+}	
