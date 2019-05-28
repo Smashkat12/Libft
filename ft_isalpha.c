@@ -6,7 +6,7 @@
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 15:05:56 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/05/28 15:06:15 by kmorulan         ###   ########.fr       */
+/*   Updated: 2019/05/28 15:31:32 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_isalpha(int c)
 {
-	if ((ft_islower(c)) || (ft_isalpha(c)))
+	if ((ft_islower(c)) || (ft_isupper(c)))
 	{
 		return (1);
 	}
