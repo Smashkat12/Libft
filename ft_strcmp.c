@@ -1,30 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 17:16:46 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/05/29 12:23:08 by kmorulan         ###   ########.fr       */
+/*   Created: 2019/05/29 17:32:23 by kmorulan          #+#    #+#             */
+/*   Updated: 2019/05/29 18:47:15 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	int i;
-
-	i = 0;
-	if (s == NULL)
-	{
-		write(1, "(null)", 6);
-	}
-	else
-		while (s[i])
-	{
-		write(1,&s[i], 1);
-		i++;
-	}
-}
+	

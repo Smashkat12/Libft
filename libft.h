@@ -6,7 +6,7 @@
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:06:43 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/05/28 17:47:19 by kmorulan         ###   ########.fr       */
+/*   Updated: 2019/05/29 17:37:09 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
-#include <fcntl.h> /* remember to delete this, used to test fd functions */
 
-# define BUFF_SIZE 100
-# define MALLCHECK(x) if (!x) return (-1);
-# define IS_SPACE(x) (x == ' ' || x == '\t' || x == '\r' || x == '\f')
 
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
