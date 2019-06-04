@@ -1,53 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/28 16:48:18 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/06/02 09:53:05 by kmorulan         ###   ########.fr       */
+/*   Created: 2019/06/02 14:16:39 by kmorulan          #+#    #+#             */
+/*   Updated: 2019/06/02 15:43:06 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+size_t		ft_strlcat(char *dst, char *src, size_t dstsize)
 {
-<<<<<<< HEAD
-	int i;
-	int j;
-
-	i = -1;
-	j = (int)ft_strlen(s1);
-	while (s2[++i] != '\0' && i < (int)n)
-	{
-		s1[j++] = s2[i];
-=======
 	size_t i;
 	size_t j;
-	char *res;
+	size_t dstlen;
+	size_t space;
+	size_t srclen;
 
-	res = s1;
-	i = 0;
+	i = ft_strlen(dst);
 	j = 0;
-	while (s1[i])
+	dstlen = ft_strlen(dst);
+	srclen = ft_strlen(src);
+	space = dstsize - dstlen - 1;
+	if(dstsize > 0)
 	{
-		i++;
-	}
-	while (n--)
-	{
-		if ((s1[i] = s2[j]))
+		while(space && src[j])
 		{
+			dst[i] = src[j];
 			i++;
 			j++;
+			space--;
 		}
-		else
-		{
-			return (res);
-		}
->>>>>>> 9842ff84b1ce0ed2bfbe2ee8cee74780f9700de5
+		dst[i] = '\0';
+		return (i - 1);
 	}
-	s1[i] = '\0';
-	return (res);
-}
+	else
+	{
+		return (srclen);
+	}
+}	
