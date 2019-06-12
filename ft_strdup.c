@@ -6,7 +6,7 @@
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 12:07:18 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/05/28 15:01:10 by kmorulan         ###   ########.fr       */
+/*   Updated: 2019/06/12 15:07:25 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(const char *src)
 {
-	char *res;
-	int i;
+	char	*res;
+	int		i;
 
 	i = 0;
 	res = (char *)malloc((sizeof(char)) * (ft_strlen(src) + 1));

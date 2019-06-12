@@ -6,7 +6,7 @@
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 15:02:36 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/05/28 15:03:14 by kmorulan         ###   ########.fr       */
+/*   Updated: 2019/06/12 15:30:19 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int		ft_tolower(int c)
 {
+	int		res;
+
 	if (ft_isupper(c))
 	{
-		int res;
-
 		res = c + 32;
 		return (res);
 	}

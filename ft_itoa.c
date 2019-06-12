@@ -6,7 +6,7 @@
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 13:12:46 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/06/10 14:11:04 by kmorulan         ###   ########.fr       */
+/*   Updated: 2019/06/12 14:42:22 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char		*ft_positive(int cnt, int n)
 {
-	char *str;
+	char	*str;
 
 	str = (char *)malloc(cnt + 1);
 	if (str)
@@ -32,7 +32,7 @@ static char		*ft_positive(int cnt, int n)
 
 static char		*ft_negative(int cnt, int n)
 {
-	char *str;
+	char	*str;
 
 	str = (char *)malloc(cnt + 2);
 	cnt = cnt + 1;
@@ -50,7 +50,7 @@ static char		*ft_negative(int cnt, int n)
 	return (str);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	int		cnt;
 	int		sum;

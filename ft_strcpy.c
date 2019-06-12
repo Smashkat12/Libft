@@ -6,7 +6,7 @@
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 14:54:28 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/05/28 14:54:42 by kmorulan         ###   ########.fr       */
+/*   Updated: 2019/06/12 15:05:52 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (src[i])
 	{

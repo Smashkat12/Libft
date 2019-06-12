@@ -6,7 +6,7 @@
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 15:23:12 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/06/10 15:23:30 by kmorulan         ###   ########.fr       */
+/*   Updated: 2019/06/12 14:36:22 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char *ptr;
-	size_t i;
+	char	*ptr;
+	size_t	i;
 
 	ptr = s;
 	i = 0;
 	if (!n)
 	{
-		return;
+		return ;
 	}
 	else
 	{
