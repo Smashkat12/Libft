@@ -1,67 +1,73 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_strspit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: xmethula <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/11 13:24:35 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/06/11 13:24:47 by kmorulan         ###   ########.fr       */
+/*   Created: 2019/06/10 09:56:41 by xmethula          #+#    #+#             */
+/*   Updated: 2019/06/12 11:12:37 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		count_wrds(char const *str, char c)
+static	int		ft_cntwrd(char const *s, char c)
 {
-	int word;
-	int i;
+	unsigned int	i;
+	int				cntr;
 
-	word = 0;
 	i = 0;
-	while (str[i])
+	cntr = 0;
+	while (s[i])
 	{
-		while ((str[i] == c) && (str[i] != '\0'))
-		{
+		while (s[i] == c)
 			i++;
-		}
-		if ((str[i] != c) && (str[i] != '\0'))
-		{
-			while ((str[i] != c) && (str[i] != '\0'))
-			{
-				i++;
-			}
-			word++;
-		}
+		if (s[i] != '\0')
+			cntr++;
+		while (s[i] && (s[i] != c))
+			i++;
 	}
-	return (word);
+	return (cntr);
+}
+
+static	char	*ft_cpy(const char *s, size_t n)
+{
+	char			*str;
+
+	str = (char *)malloc(sizeof(char) * n + 1);
+	if (str == NULL)
+		return (NULL);
+	str = ft_strncpy(str, s, n);
+	str[n] = '\0';
+	return (str);
 }
 
 char			**ft_strsplit(char const *s, char c)
 {
-	char	**word_str;
-	int		r;
-	int		i;
-	int		j;
+	int				i;
+	int				j;
+	int				k;
+	char			**tab;
 
-	r = 0;
 	i = 0;
-	j = 0;
-	if ((word_str = (char **)malloc(count_wrds(s, c) * sizeof(char *))))
+	k = 0;
+	tab = (char **)malloc(sizeof(char *) * (ft_cntwrd(s, c)) + 1);
+	if (tab == NULL)
+		return (NULL);
+	while (s[i])
 	{
-		while (r++ < count_wrds(s, c))
-			while ((s[i++] == c) && (s[i] != '\0'))
-				if ((s[i] != c) && (s[i] != '\0'))
-				{
-					j = 0;
-					while ((s[i + j++] != c) && (s[i + j] != '\0'))
-						word_str[r] = (char *)malloc(j + 1);
-					j = 0;
-					while ((s[i] != c) && (s[i] != '\0'))
-						word_str[r][j++] = s[i++];
-					word_str[r][j] = '\0';
-				}
-		return (word_str);
+		while (s[i] == c)
+			i++;
+		j = i;
+		while (s[i] && s[i] != c)
+			i++;
+		if (i > j)
+		{
+			tab[k] = ft_cpy(s + j, i - j);
+			k++;
+		}
 	}
-	return (NULL);
+	tab[k] = NULL;
+	return (tab);
 }
