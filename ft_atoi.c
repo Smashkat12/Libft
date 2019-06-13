@@ -6,7 +6,7 @@
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 12:33:05 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/06/12 14:34:08 by kmorulan         ###   ########.fr       */
+/*   Updated: 2019/06/12 16:02:29 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		ft_atoi(const char *str)
 		if ((num > 2147483648) && sign == -1)
 			return (0);
 		else if ((num > 2147483647) && sign == 1)
-			return (-1);
+			return (0);
 		i++;
 	}
 	return (num * sign);
