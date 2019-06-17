@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lstlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/14 07:27:13 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/06/17 08:00:47 by kmorulan         ###   ########.fr       */
+/*   Created: 2019/06/17 10:43:16 by kmorulan          #+#    #+#             */
+/*   Updated: 2019/06/17 10:46:15 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+int		ft_lstlen(t_list **alst)
 {
-	(*new).next = *alst;
-	*alst = new;
+	t_list	*temp;
+	int		count;
+
+	temp = *alst;
+	count = 0;
+	while (temp != NULL)
+	{
+		count++;
+		temp = (*temp).next;
+	}
+	return (count);
 }

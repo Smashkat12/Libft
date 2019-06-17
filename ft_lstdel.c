@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/14 07:27:13 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/06/17 08:00:47 by kmorulan         ###   ########.fr       */
+/*   Created: 2019/06/17 11:10:14 by kmorulan          #+#    #+#             */
+/*   Updated: 2019/06/17 16:54:40 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	(*new).next = *alst;
-	*alst = new;
+	t_list	*current;
+	t_list	*next;
+
+	current = *alst;
+	while (current != NULL)
+	{
+		del(current->content, current->content_size);
+		next = current->next;
+		free(current);
+		current = next;
+		*alst = current;
+	}
 }
