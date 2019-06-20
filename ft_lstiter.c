@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/10 15:41:54 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/06/18 14:23:48 by kmorulan         ###   ########.fr       */
+/*   Created: 2019/06/18 07:30:06 by kmorulan          #+#    #+#             */
+/*   Updated: 2019/06/18 07:53:16 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strnequ(char const *s1, char const *s2, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	size_t i;
+	t_list	*root;
+	t_list	*temp;
 
-	i = 0;
-	if ((n > 0) && s1 && s2)
+	root = lst;
+	temp = root;
+	if (lst)
 	{
-		while ((s1[i] != '\0') && (s2[i] != '\0')
-				&& (i < n) && (s1[i] == s2[i]))
+		while (temp != NULL)
 		{
-			i++;
-			if (i == n)
-			{
-				return (1);
-			}
+			f(temp);
+			temp = temp->next;
 		}
-		if (s1[i] - s2[i] == 0)
-		{
-			return (1);
-		}
-		else
-			return (0);
 	}
-	else if (n == 0)
-		return (1);
 	else
-		return (0);
+		return ;
 }
