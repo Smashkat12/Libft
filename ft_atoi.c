@@ -6,37 +6,60 @@
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 12:33:05 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/06/20 09:52:25 by kmorulan         ###   ########.fr       */
+/*   Updated: 2019/06/21 12:33:33 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+static	int	is_digit(char c)
 {
-	int			i;
-	long long	num;
-	int			sign;
+	if ((c >= 48) && (c <= 57))
+		return (1);
+	return (0);
+}
+
+static	int	spaces(char c)
+{
+	if (c == '\n' || c == '\t' || c == '\f')
+		return (1);
+	else if (c == '\v' || c == '\r' || c == ' ')
+		return (1);
+	return (0);
+}
+
+static	int	parity(char c)
+{
+	if (c == 43 || c == 45)
+		return (1);
+	return (0);
+}
+
+int			ft_atoi(const char *str)
+{
+	int j;
+	int i;
+	int sum;
 
 	i = 0;
-	num = 0;
-	sign = 1;
-	while (str[i] == '\n' ||
-		str[i] == '\t' || str[i] == '\f' ||
-		str[i] == '\v' || str[i] == '\r' || str[i] == ' ')
-		i++;
-	if (str[i] == '-')
-		sign = -1;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while ((str[i]) && (str[i] >= '0') && (str[i] <= '9'))
+	j = 0;
+	sum = 0;
+	while ((str[i]) && (spaces(str[i]) || parity(str[i]) || is_digit(str[i])))
 	{
-		num = num * 10 + str[i] - '0';
-		if ((num > 2147483648) && sign == -1)
-			return (0);
-		else if ((num > 2147483647) && sign == 1)
-			return (-1);
+		if (parity(str[i]) || is_digit(str[i]))
+		{
+			if (parity(str[i]))
+				i++;
+			while (is_digit(str[i + j]))
+			{
+				if (str[i - 1] == 45)
+					sum = (sum * 10) + ((-1) * (str[i + (j++)] - 48));
+				else
+					sum = (sum * 10) + (str[i + (j++)] - 48);
+			}
+			return (sum);
+		}
 		i++;
 	}
-	return (num * sign);
+	return (sum);
 }
