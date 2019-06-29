@@ -6,7 +6,7 @@
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/29 14:34:03 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/06/29 14:48:30 by kmorulan         ###   ########.fr       */
+/*   Updated: 2019/06/29 15:19:47 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strjoinch(char const *s, char c)
 		return (NULL);
 	}
 	s_len = ft_strlen(s);
-	str = (char *)malloc(sizeof(char) * (s_len + 1));
+	str = ft_strnew(s_len + 1);
 	if (!str)
 	{
 		return (NULL);
