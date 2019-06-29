@@ -6,7 +6,7 @@
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:06:43 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/06/21 10:41:19 by kmorulan         ###   ########.fr       */
+/*   Updated: 2019/06/29 13:17:05 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,5 @@ int					ft_isupper(int c);
 int					ft_islower(int c);
 char				*ft_strndup(const char *s1, size_t n);
 int					ft_lstlen(t_list **alst);
+int					ft_copyuntil(char **dst, char *src, char c);
 #endif
