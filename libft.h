@@ -6,7 +6,7 @@
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:06:43 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/06/29 14:51:58 by kmorulan         ###   ########.fr       */
+/*   Updated: 2019/07/03 07:17:09 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,8 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 /*
 ** Extra functions
 */
+
+# define MALLCHECK(x) if (!x) return (-1);
 
 int					ft_isupper(int c);
 int					ft_islower(int c);
