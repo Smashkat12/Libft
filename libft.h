@@ -6,7 +6,7 @@
 /*   By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 14:06:43 by kmorulan          #+#    #+#             */
-/*   Updated: 2019/07/03 07:17:09 by kmorulan         ###   ########.fr       */
+/*   Updated: 2019/07/03 07:20:53 by kmorulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 */
 
 # define MALLCHECK(x) if (!x) return (-1);
+# define CHECK_RETURN(c, r) if(c) return (r);
 
 int					ft_isupper(int c);
 int					ft_islower(int c);
@@ -108,4 +109,5 @@ char				*ft_strndup(const char *s1, size_t n);
 int					ft_lstlen(t_list **alst);
 int					ft_copyuntil(char **dst, char *src, char c);
 char				*ft_strjoinch(char const *s, char c);
+void				ft_swapnfree(void **var, void *new_val);
 #endif
