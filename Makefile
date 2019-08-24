@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kmorulan <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: kmorulan <kmorulan@student.wethinkcode.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/28 13:51:43 by kmorulan          #+#    #+#              #
-#    Updated: 2019/07/03 07:44:25 by kmorulan         ###   ########.fr        #
+#    Updated: 2019/08/24 10:56:38 by kmorulan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = ft_atoi.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_memchr.c \
     ft_putnbr_fd.c ft_putnbr.c ft_strnstr.c ft_lstnew.c ft_lstdel.c \
 	ft_lstdelone.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_isupper.c \
 	ft_islower.c ft_strndup.c ft_lstlen.c ft_copyuntil.c ft_strjoinch.c \
-	ft_swapnfree.c
+	ft_swapnfree.c ft_lstadd_end.c
 
 OUT = ft_atoi.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_memchr.o \
     ft_memcpy.o ft_memset.o ft_strchr.o ft_strcpy.o ft_strlcat.o \
@@ -40,7 +40,7 @@ OUT = ft_atoi.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_memchr.o \
     ft_putnbr_fd.o ft_putnbr.o ft_strnstr.o ft_lstnew.o ft_lstdel.o \
 	ft_lstdelone.o ft_lstadd.o ft_lstiter.o ft_lstmap.o ft_isupper.o \
 	ft_islower.o ft_strndup.o ft_lstlen.o ft_copyuntil.o ft_strjoinch.o \
-	ft_swapnfree.o
+	ft_swapnfree.o ft_lstadd_end.o
 
 LIB = libft.a
 FLAGS = -Wall -Werror -Wextra
